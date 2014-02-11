@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>INDEX</title>
+    <script>
+        window.onload = function () {
+            // 변수를 선언합니다.
+            var img = document.createElement('img');
+            // 엘리먼트에 속성 추가
+            // - 기존에 있는 속성인 경우 => element.속성명 = 값;
+            // - 기존에 없는 속성인 경우 => X(일반적인 방법으로 불가!)
+            //    element.setAttribute() 호출해야 한다.
+            img.src = 'Penguins.jpg';//<img src='Penguins.jpg' width ='500' ></img>
+            img.width = 500;
+            img["height"] = 450;
+           
+            //img["data-no"] = 15;
+            img.setAttribute("data-no",15); //없는 속성 추가할 때 사용
+            
+            // 노드를 연결합니다.
+            document.body.appendChild(img);
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

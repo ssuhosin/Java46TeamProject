@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+    function myJQuery(value) {
+    	if(typeof(value) == "function") {
+    		value();
+    	} else if (value.indexOf('#') == 0) {
+    		return document.getElementById(value.substring(1));
+    	}
+    }
+    var $2 = myJQuery;
+    
+    $2(function(test1){
+    	console.log("okok");
+    });
+    
+    window.onload = function() {
+	    $2('#header').onclick = function() {
+	    	alert("okok");
+	    };
+    };
+    
+    //$(함수객체)
+    // => 함수를 정의하고 바로 호출함.
+    // (function(){})();
+    // => $(function(){});
+        
+    </script>
+</head>
+<body>
+<h1 id="header">dddddddd</h1>
+</body>
+</html>

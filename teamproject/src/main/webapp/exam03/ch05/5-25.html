@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 함수를 생성합니다.
+        /*
+        function returnFunction() {
+            return function () {
+                alert('Hello Function .. !');
+            };
+        }
+        */
+
+        // 함수를 호출합니다.
+        // 함수가 함수를 리턴 가능
+        //returnFunction()();
+        
+        //factory메소드 패턴
+        function createInterest(type) {
+        	if (type == "고정금리") {
+        		return function(money) {
+        			return money * 0.008;
+        		};
+        	} else if (type == "변동금리") {
+        		return function(money) {
+        			var interest = [0.003, 0.0015, 0.0017, 0.002];
+        			var sum = 0;
+        			for(var i in interest) {
+        				sum += money * interest[i];
+        			}
+        			return sum;
+        		};
+        	} else if (type == "일복리") {
+        		//리턴안해도 실행시점에 문법체크하기 때문에 에러 안띄움
+        	} else {
+        		
+        	}
+        }
+        
+        var interestCalc = createInterest("변동금리");
+        console.log(interestCalc(10000000) + 10000000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

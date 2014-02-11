@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('h1').each(function () {
+                if ($(this).is('.select')) {//is는 조미료함수(해당엘리먼트객체에 .select가 소속되었는지 안되었는지 알려준다.) 순수한 this에는 없다.
+                    $(this).css('background', 'orange');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="select">Header-0</h1>
+    <h1>Header-1</h1>
+    <h1 class="select">Header-2</h1>
+</body>
+</html>

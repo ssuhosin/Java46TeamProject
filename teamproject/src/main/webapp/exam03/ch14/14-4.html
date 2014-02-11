@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+        	//평션을 집어 넣으므로써 사용자정의 순서를 정할 수 있다.(예. 소수등)
+            $('h3').filter(function (index) {//함수의 리턴값이 들어간다.
+                return   index % 3 == 0; //3의 배수를 선택(true만 선택)
+            }).css({
+                backgroundColor: 'black',
+                color: 'white'
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Header-0</h3>
+    <h3>Header-1</h3>
+    <h3>Header-2</h3>
+    <h3>Header-3</h3>
+    <h3>Header-4</h3>
+    <h3>Header-5</h3>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            document.getElementById('header').onclick = function (e) {
+                // 이벤트 객체를 설정합니다.
+                // IE8과 함께 쓸 수 있는 방법
+                var event = e || window.event;//undefined가 false로 바낌(IE8은 event파라미터가 안넘어옴)
+
+                document.body.innerHTML = '';
+                for (var key in event) {
+                    document.body.innerHTML += '<p>' + key + ': ' + event[key] + '</p>';
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    /*
+    // load 이벤트를 처리할 "이벤트 핸들러 = 리스너"
+    // 리스너의 이름은 헨들러로 보통 시작한다.
+    function handleLoad(event) {
+    	console.log("오호라.. 출력 완료되었네!");
+    }
+    
+    // 이벤트 핸들러 등록
+    window.onload = handleLoad;
+    //window.onload = function () { }; //load의 의미 : DOM트리가 완성 => 출력완료 => load event 발생
+    */
+    window.onload = function(event) { //onload가 undefined가 아니라면 해당 함수를 호출한다.
+      console.log("오호라.. 출력 완료되었네!");
+    };
+    </script>
+</head>
+<body>
+<h1>okok</h1>
+<script>
+alert("오호라...");
+</script>
+</body>
+</html>

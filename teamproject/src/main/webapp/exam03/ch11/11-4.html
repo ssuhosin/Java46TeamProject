@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            // 변수를 선언합니다.
+            var header = document.getElementById('header');
+
+            // 이벤트를 연결합니다.
+            header.onclick = function () {
+                alert('클릭');
+            };
+            
+//             document.body.onclick = function() { //타겟 or 버블
+//             	alert("우헤헤....");
+//             }
+
+            // 캡쳐 단계에 이벤트 핸들러를 등록하고 싶다면,
+            // addEventListener()를 사용하라.
+            // 표준
+            document.body.addEventListener('click',function() { //IE8에 호환안됨
+              alert("우헤헤....");
+            }, true);//이벤트이름, 리스너, 캡처여부(디폴트가 타겟 or 버블)
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1><!-- 보더 안쪽을 누를 때 이벤트가 발생 -->
+</body>
+</html>

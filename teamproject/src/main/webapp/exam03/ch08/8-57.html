@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var object = {}; //프로퍼티의 설정을 세세하게 설정할 수 있다.
+        Object.defineProperty(object, 'name', {
+            value: '윤인성',
+            writable: false,
+            enumerable: false
+        });
+
+        // 확인합니다.
+        object.name = 'OTHER';
+        for (var i in object) {
+            alert(i + ' : ' + object[i]);
+        }
+
+        // 출력합니다.
+        alert(object.name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

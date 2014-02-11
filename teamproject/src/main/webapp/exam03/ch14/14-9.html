@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('h1').eq(0).css('background', 'orange');
+            $('h1').eq(-1).css('background', 'red');//음수로는 한바퀴만 돌수있다.(즉 여기서는 -3까지 가능)
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Header-0</h1>
+        <h1>Header-1</h1>
+        <h1>Header-2</h1>
+    </div>
+</body>
+</html>

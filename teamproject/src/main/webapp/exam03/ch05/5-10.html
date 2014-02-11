@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    
+    /* 함수의 파라미터(매개변수) 사용
+      - arguments 히든 파라미터
+        모든 파라미터 값을 가지고 있는 배열 객체이다.
+    */
+    
+    function plus() {
+    	return arguments[0] + arguments[1];
+    }
+
+    /* 오버로딩 불가!! */
+    /*
+    function plus(a, b) {
+    	return arguments[0] + arguments[1];
+    }
+    */
+    
+    console.log(plus(10,20));
+    console.log(plus(100,200,300));
+
+    //arguments는 함수에 몇개의 파라미터가 넘어올지 모를때 사용
+    function minus(a, b) { // a와 b는 닉네임이다. a는 arguments[0], b는 arguments[1] 
+    	return a - arguments[1];
+    }
+    
+    console.log(minus(100,50));
+    
+/*         // 함수를 호출합니다.
+        alert('원래 매개 변수입니다.', '추가된 매개 변수입니다.');
+        prompt('원래 매개 변수입니다.');
+ */    </script>
+</head>
+<body>
+
+</body>
+</html>

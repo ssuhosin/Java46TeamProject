@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+            document.getElementById('header').onclick = function () {
+                this.style.color = 'orange'; //이벤트가 호출되었을 때 객체(this)
+                this.style.backgroundColor = 'red';
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1 id="header">Click</h1>
+</body>
+</html>

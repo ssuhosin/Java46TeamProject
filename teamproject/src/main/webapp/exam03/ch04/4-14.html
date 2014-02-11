@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        var array = ['포도', '사과', '바나나', '망고'];
+
+        // 반복문
+        // in 다음에 주어지는 객체가 배열일 경우 i는 인덱스다.
+        for (var i in array) {
+            alert(array[i]);
+        }
+        
+        var myMap = new Object();
+        myMap["name"] = "홍길동";
+        myMap.age = 20;
+        myMap['tel'] = "111-1111";
+        myMap['basic address'] = "강남";
+        //myMap.detail address = "논현동"; //.찍었을 때는 공백이 올 수 없다. 오류
+        
+        // in 다음에 주어지는 값이 객체일 경우 i는 프라퍼티명이다.
+        for(var key in myMap) {
+        	console.log(key);
+        }
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

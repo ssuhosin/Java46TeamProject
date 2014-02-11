@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { border: 3px solid black;
+            padding: 5px 
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div onclick="alert('outer-div')">
+        <div onclick="alert('inner-div')">
+            <h1 onclick="alert('header')">
+            <!-- 부모로 전파하지 못하게 한다. -->
+                <p onclick="alert('pagagraph'); event.stopPropagation();">Pagagraph</p>
+            </h1>
+        </div>
+    </div>
+</body>
+</html>

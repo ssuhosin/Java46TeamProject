@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    
+    function createInterest(type, interestValue) {
+    	 
+        if (type == "고정금리") {
+          return function(money) {
+            return money * interestValue;
+          };
+        } else if (type == "변동금리") {
+          return function(money) {
+            var sum = 0;
+            for(var i in interestValue) {
+              sum += money * interestValue[i];
+            }
+            return sum;
+          };
+        } else if (type == "일복리") {
+          //리턴안해도 실행시점에 문법체크하기 때문에 에러 안띄움
+        } else {
+          
+        }
+      }
+      
+      var interestCalc1 = createInterest("고정금리", 0.012);
+      var interestCalc2 = createInterest("고정금리", 0.03);
+      console.log(interestCalc1(10000000) + 10000000);
+      console.log(interestCalc2(10000000) + 10000000);
+    
+    /*
+        // 함수를 선언합니다.
+        function test(name) {
+            var output = 'Hello ' + name + ' .. !';
+            return function () {
+                alert(output);
+            };
+        }
+
+        // 출력합니다.
+        test('JavaScript')();
+    */
+     
+    </script>
+</head>
+<body>
+
+</body>
+</html>

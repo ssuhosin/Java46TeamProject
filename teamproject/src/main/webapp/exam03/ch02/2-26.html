@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    //window.onload = function () {} 전화번호를 등록하고 필요할 때 호출
+        window.onload = function () {
+            // 변수를 선언합니다.
+            var list = ''; //최소 빈문자열이 있어야 +=를 이용해 붙일 수 있다.
+
+            // 연산자를 사용합니다.
+            list += '<ul>';
+            list += '    <li>Hello</li>';
+            list += '    <li>JavaScript..!</li>';
+            list += '</ul>';
+
+            // 문서에 출력합니다.(객체안에 들어가있는 객체를 호출 사실 get프라퍼티로 호출 : OGNL표현식)
+            document.body.innerHTML = list;
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

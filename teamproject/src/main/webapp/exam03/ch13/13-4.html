@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+    /*
+    function jQuery(value) {
+    	var e = null;
+    	if(typeof(value) == "object") {// 넘오는 값이 객체면 
+    		e = value; // 그냥 저장
+    	} else if(value가 #으로 시작한다면) {
+    		아이디로 엘리먼트를 찾는다.
+    	} else if(value가 .으로 시작한다면) {
+    		... CSS 클래스 이름으로 엘리먼트를 찾는다.//QuerySelectorAll
+    	} else if(value가 < 로 시작한다면) { //태그를 생성하라는 의미
+    		엘리먼트를 생성한다. //createElement
+    	} else {
+    		태그이름으로 엘리먼트를 찾는다.
+    	}
+    	
+      // e.addEventListener = f; or e.onclik = f;
+    	e.click = function(f) {
+    		e.onclick = f;
+    	};
+    	
+    	//반복해서 호출될 펑션을 만듬 
+    	e.each = function(f) {
+    		for(...) {
+    			f(index, data);
+    		}
+    	}
+    	
+    	e.ready = function(f) {
+    		e.addEventListener('load',f);
+    	}
+    	// 엘리먼트에 대해 부가 프로퍼티나 함수를 추가한다.(JQUERY함수가)
+    	
+    }
+    */
+
+    //옛날방식(돔트리가 만들어지고 발생되는 이벤트)
+    window.onload = function() {//이벤트 헨들러를 단 한개만 등록
+    	console.log("onload1"); 
+    };
+    
+    //addEventListener와 onload는 호출된 순서가 중요 
+    window.addEventListener('load', function(){ //어떤 이벤트에서 호출될 메소드를 등록(추가시킨다.) 
+    	console.log("addEventListener1");
+    });
+    
+    //$(document)가 리턴하는 것은 원래 document객체에대가 ready,click등의 함수를 붙여서 리턴을 한다.
+    //가공된 객체를 리턴한다.
+    $(document).ready(function () { //JQUERY에서 추가시켜준 함수
+      console.log('ready1'); //화면에 호출되기전 돔트리가 완성될 때 호출(제일먼저 호출됨 onload보다 먼저 호출이된다.(규칙))
+    });
+    
+    //옛날방식(돔트리가 만들어지고 발생되는 이벤트)
+    window.onload = function() {
+    	console.log("onload2");
+    };
+    
+    window.addEventListener('load', function(){
+    	console.log("addEventListener2");
+    });
+    
+    //$(document)가 리턴하는 것은 원래 document객체에대가 ready,click등의 함수를 붙여서 리턴을 한다.
+    //가공된 객체를 리턴한다.
+    $(document).ready(function () { //JQUERY에서 추가시켜준 함수
+      console.log('ready2');
+    });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

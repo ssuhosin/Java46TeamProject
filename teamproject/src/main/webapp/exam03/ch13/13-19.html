@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('body > *').css('color', 'red');//body의 직계 자손
+        });
+    </script>
+</head>
+<body>
+    <div> <!-- color스타일을 red로 상속 받는다. -->
+        <ul>
+            <li>Apple</li>
+            <li>Bag</li>
+            <li>Cat</li>
+            <li>Dog</li>
+            <li>Elephant</li>
+        </ul>
+    </div>
+</body>
+</html>

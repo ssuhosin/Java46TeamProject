@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+    /* 생성자 함수
+     - 빈 객체를 초기화 하는 역할을 수행하는 함수를 보통 생성자 함수라고 부른다.
+     - 별도의 문법이 있는 것은 아니다.
+     - new 연산자는 기본적으로 Object() 함수를 무조건 호출한다.
+    */
+    
+        //함수이름이 대문자이면 긴장해라(객체를 생성하는 생성자역할을 할 수 있다.)
+        function Student(name,kor,math,eng,sci) {
+       	//this는 student()를 호출한 객체를 가르킴
+       	 this.이름 = name;
+       	 this.국어 = kor;
+       	 this.수학 = math;
+       	 this.영어 = eng;
+       	 this.과학 = sci;
+       	 //과학 = sci;
+       	 
+       	 this.getSum = function () {
+                return this.국어 + this.수학 + this.영어 + this.과학;
+          };
+          this.getAverage = function () {
+                return this.getSum() / 4;
+          };
+          this.toString = function () {
+       	   return this.이름 + '\t' + this.getSum() + '\t' + this.getAverage();
+          };
+        }
+        var obj = new Student("홍길동",90,80,80,90); //1.빈객체생성 2.초기화
+        console.log(obj.toString());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

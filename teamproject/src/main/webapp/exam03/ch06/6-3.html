@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        // 변수를 선언합니다.
+        /* 자바스크립트 객체 생성
+         1) Object() 함수 이용
+         var obj = new Object();
+         obj.제품명 = "...";
+         - new : 빈객체를 생성 
+         - 자바스크립트 객체를 위한 최소한의 프로퍼티와 메서드를 추가한다.(object객체)
+        */
+        
+        var product1 = new Object(); //맵객체를 만듬
+        product1.제품명 = "오호라 망고";
+        product1.유형 = "소금절임";
+        product1.성분 = "망고,소금,인공색소";
+        product1.원산지 = "오호라 망고";
+        product1.제품명 = "중국 공장";
+
+        /* 객체 생성 단축 명령어 : {}
+        */
+        var product2 = {}; //new object()대신
+        product2.제품명 = "오호라 망고";
+        product2.유형 = "소금절임";
+        product2.성분 = "망고,소금,인공색소";
+        product2.원산지 = "오호라 망고";
+        product2.제품명 = "중국 공장";
+
+        /* 객체 생성 단축 명령어와 프로퍼티 추가
+        */
+        var product3 = {
+            제품명: '7D 건조 망고',
+            유형: '당절임',
+            성분: '망고, 설탕, 메타중아황산나트륨, 치자황색소',
+            원산지: '필리핀'
+        };
+        
+        product3.가격 = 20900;
+        
+        console.log(product1);
+        console.log(product2);
+        console.log(product3);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+  h1 {
+    border: 5px blue solid;
+  }
+</style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+        	//이전 버전에서는 on대신 live를 썼다.
+            $('#wrap').on('click', 'h1', function () {//h1을 찾아서 click이벤트를 등록(앞으로 만들어질 h1까지도 이벤트함수가 자동등록됨)
+//                 var length = $('h1').length;
+//                 var targetHTML = $(this).html();
+//                $('#wrap').append('<h1>' + length + ' - ' + targetHTML + '</h1>');
+                $('#wrap').append('<h1>OKOK</h1>');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Header</h1>
+    </div>
+</body>
+</html>
