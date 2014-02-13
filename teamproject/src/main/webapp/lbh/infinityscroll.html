@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+#sidebar {
+  background:       #efe5d0 url(images/background.gif) bottom right;
+  font-size:        80%;
+  padding:          5px;
+  margin:           0px 10px 10px 470px;
+  width:  320px;
+  
+}
+
+.beanheading {
+  text-align:       center;
+  line-height:      1.8em;
+  
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+        // 무한 스크롤 부분
+        $(document).ready(function () {
+            // 스크롤 이벤트 발생 시
+            $(window).scroll(function () {
+                // 필요한 변수를 구합니다.
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();
+                // 스크롤의 높이와 문서의 높이가 같을 때
+                if (scrollHeight == documentHeight) {
+                    for (var i = 0; i < 5; i++) {
+                        $('<h1>Infinity Scroll</h1>').appendTo('#ui-widget-body');
+                    }
+                }
+            });
+        });
+        // 테스트를 위해 내부에 공간을 채워둡니다.
+        $(document).ready(function () {
+            for (var i = 0; i < 20; i++) {
+                $('<h2>Infinity Scroll</h2>').appendTo('#ui-widget-body');
+            }
+        });
+    </script>
+
+  <meta charset="utf-8">
+  <title>jQuery UI Resizable - Maximum / minimum size</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #resizable { width: 200px; height: 150px; padding: 5px; }
+  #resizable h3 { text-align: center; margin: 0; }
+  </style>
+  <script>
+  $(function() {
+    $( "#resizable" ).resizable({
+      maxHeight: 650,
+      maxWidth: 750,
+      minHeight: 150,
+      minWidth: 200
+    });
+  });
+  </script>
+<script>
+	$(function() {
+	  $("#resizable").resizable();
+  });
+</script>
+
+
+</head>
+<body>
+	<h1>이 뒤에 무한 스크롤 붙는거야?</h1>
+
+	<div id="resizable" class="ui-widget-content">
+		<h3 class="ui-widget-header">Resizable</h3>
+		<h4 class="ui-widget-body">여기에 무한 스크롤이 들어가야해</h4>
+	</div>
+
+
+<table border="1">
+        <tr>
+            <th><img src='http://www.hanintel.com/boards/data/cheditor4/1010/sd8PWO2K2aLSo.jpg' width='200' height='170'></th>
+        </tr>
+        <tr>
+            <td>TowerBridge</td>
+        </tr>
+        <tr>
+            <td>Data 2</td>
+        </tr>
+    </table>
+
+
+
+	<div id="sidebar">
+		<p class="beanheading">
+			<img src="http://www.hanintel.com/boards/data/cheditor4/1010/sd8PWO2K2aLSo.jpg" width="290" /> <br /> United Kingdom  <span class="slogan">Tower Bridge <br /> 
+			</span>
+		</p>
+		<p>Tower Bridge (built 1886–1894) is a combined bascule and suspension bridge in London which crosses the River Thames. 
+		   It is close to the Tower of London, from which it takes its name, and has become an iconic symbol of London.</p>
+	</div>
+
+
+
+
+	<div class="brick"
+		style="visibility: visible; width: 301.6px; position: absolute; opacity: 1; top: 50px; left: 1274.4px; -webkit-transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s, opacity 0.5s; transition: top 0.5s, left 0.5s, width 0.5s, height 0.5s, opacity 0.5s; height: 388px;"
+		data-delay="1" data-height="328" data-width="221" data-state="move"
+		id="1-31">
+		<a href="/Detail/?n_code=DT01&amp;cnum=219" rel="external"><img
+			src="http://data.mycourse.co.kr/myTourImg/13/201402/t_20142111548190_400.jpg"
+			width="100%"></a>
+		<div class="info">
+			<div class="gridLine">
+				<div class="gridLineArea">
+					<div>
+						<p>
+							<span class="gridTitle"><a
+								href="/Detail/?n_code=DT01&amp;cnum=219" rel="external">친구야
+									우린 먹으려고 만난거냐??</a></span><span class="gridPosition">광주</span><span
+								class="griddate">2014-02-11</span>
+						</p>
+					</div>
+				</div>
+				<div class="gridEmoticon">
+					<span class="girdStar"><img
+						src="/include/design/image/ico/star_no.png"><img
+						src="/include/design/image/ico/star_no.png"><img
+						src="/include/design/image/ico/star_no.png"><img
+						src="/include/design/image/ico/star_no.png"><img
+						src="/include/design/image/ico/star_no.png"></span><span
+						class="gridIcon gridmsg"><img
+						src="/INCLUDE/Design/IMAGE/Ico/Msg.png"> <span>0</span></span> <span
+						class="gridIcon"><img
+						src="/INCLUDE/Design/IMAGE/Ico/heart.png"> <span>0</span></span>
+				</div>
+				<div class="gridinfo">
+					<p>
+						<span>1일 </span><span class="spanline">2 명</span><span
+							class="spanline"></span>
+					</p>
+					<p>
+						<span>15,000 원</span><span class="spanline">버스</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="gridProfileArea">
+			<span class="gridprofile"><a
+				href="/Mypage/?n_code=MP01&amp;mnum=13" rel="external"><img
+					src="/include/design/image/BasicIco/girl_s.png"></a></span>
+			<p>
+				<span class="gridname">삐삐</span><span class="gridMeminfo">코스
+					10 <span class="spanline">발도장 0</span>
+				</span>
+			</p>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
