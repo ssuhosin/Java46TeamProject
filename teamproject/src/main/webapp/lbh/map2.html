@@ -3,17 +3,36 @@
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
 <style type="text/css">
+
+#content {
+  background:       #efe5d0 url(images/background.gif) bottom right;
+  font-size:        80%;
+  padding:          5px;
+  margin:           0px 10px 10px 470px;
+  width:  320px;
+  float-left;
+}
+
+.beanheading {
+  text-align:       center;
+  line-height:      1.8em;
+}
+
  html { height : 100% }
  body { height : 100%; margin: 0% 0% 0% 0%; padding: 0 }
  #map_canvas { height : 100% }
 </style>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">  
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script type = "text/javascript"
  src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDWJdvu0r-PykFWvN6sv63RDrRmkGNxsRU&sensor=true"></script>
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer_compiled.js"></script>
 <script type = "text/javascript">
+
+
+
 var map;
 var markerCluster = null;
 
@@ -27,7 +46,8 @@ function initialize(){
  
  map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
  markerCluster = new MarkerClusterer(map,[],{zoomOnClick: false});
-         
+ 
+ 
  var location1 = new google.maps.Marker({
    position: new google.maps.LatLng(51.531708,-0.154007),
    map: map
@@ -116,65 +136,43 @@ function initialize(){
  markerCluster.addMarker(location16,0);
  markerCluster.addMarker(location17,0);
  
+ 
+ 
  $( "#dialog" ).dialog({
    autoOpen: false,
    modal: true,
-   width: 600,
-   minWidth: 300,
-   height: 800});
+   width: 670,
+   minWidth: 330,
+   height: 800}).css("opacity","10");  
  markerCluster.addListener("clusterclick", function(){
    $( "#dialog" ).dialog( "open" );
  });
  
  $(".content").css("float","left").css("border", "5px solid red");
+ $(".slogan").css("color", "black").css("text","center");  
 };
 
 </script>
+
+
+
+
 </head>
 <body onload="initialize()">
  <div id="map_canvas" style="width:100%; height:100%"></div>
  <div id="dialog" title="결과검색창" style="padding: 0px 5px;">
  
+
+ 
   <div class='content' style="width: 300px">
     <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
+      <img src="http://www.hanintel.com/boards/data/cheditor4/1010/sd8PWO2K2aLSo.jpg" width="100%>
     </a><br>
-    <span>타워 브릿지</span>
+    <span class="slogan">Tower Bridge</span>
+    <p style="font-size:35px">Tower Bridge (built 1886–1894) is a combined bascule and suspension bridge in London which crosses the River Thames. 
+		   It is close to the Tower of London, from which it takes its name, and has become an iconic symbol of London.</p>
   </div>
 
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
-  </div>
-
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
-  </div>
-
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
-  </div>
-
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
-  </div>
-
-  
 	
 
 	</div>
