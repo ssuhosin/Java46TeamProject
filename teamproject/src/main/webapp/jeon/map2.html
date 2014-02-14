@@ -7,6 +7,54 @@
  body { height : 100%; margin: 0% 0% 0% 0%; padding: 0 }
  #map_canvas { height : 100% }
 </style>
+<style type="text/css">
+  body {
+    font-family: Verdana,Arial,sans-serif;
+  } 
+  .content {
+    float: left;
+    margin: 5px;
+    width: 250px; /* 너비 */
+    box-sizing: border-box; /* 박스 사이즈 포함 정도 */
+    border-radius: 5px; /* 모깎기 - 왼쪽 위, 오른쪽 위, 오른쪽 아래, 왼쪽 아래 */
+    border: 2px solid white; /* 선 - 두께, 스타일, 컬러 */
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5); /* 박스 그림자 - 가로 위치, 세로 위치, 크기, 스프레드, 컬러 */
+    background: white; /* 배경 - 이미지, 배경 컬러 지정 */
+  }
+/*    
+  .content {
+    float: left;
+    border: 5px solid white;
+    border-radius: 10px;
+    margin: 0px;
+    width: 250px;
+    background: white;
+  }
+*/  
+  .imgClass {
+    margin: -2px;
+    padding: 0px;
+    width: 250px;
+    border-radius: 5px 5px 0 0;
+  }
+  .textTitleDivClass {
+    vertical-align: middle;
+  }
+  .textTitleClass {
+    font-size: 18px;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+  .aClass:LINK {
+  }
+  .aClass:VISITED {
+  }
+  .aClass:HOVER {
+  }
+  .aClass:ACTIVE {
+  }
+  a:focus { outline:none; }
+</style>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -97,13 +145,13 @@ function initialize(){
    map: map
  });
  
- 
  markerCluster.addMarker(location1,0);
  markerCluster.addMarker(location2,0);
  markerCluster.addMarker(location3,0);
  markerCluster.addMarker(location4,0);
  markerCluster.addMarker(location5,0);
  markerCluster.addMarker(location6,0);
+ 
  markerCluster.addMarker(location7,0);
  markerCluster.addMarker(location8,0);
  markerCluster.addMarker(location9,0);
@@ -116,17 +164,20 @@ function initialize(){
  markerCluster.addMarker(location16,0);
  markerCluster.addMarker(location17,0);
  
+ 
  $( "#dialog" ).dialog({
    autoOpen: false,
    modal: true,
-   width: 600,
+   width: 805,
    minWidth: 300,
-   height: 800});
+   height: 800
+ }).css("background-color","#dcdcdc");
  markerCluster.addListener("clusterclick", function(){
    $( "#dialog" ).dialog( "open" );
  });
  
- $(".content").css("float","left").css("border", "5px solid red");
+ //$(".content").css("float","left").css("border", "5px solid black").css("margin","0px").css("width","300px");
+ //$(".imgClass").css("margin","0px").css("padding","0px");
 };
 
 </script>
@@ -135,48 +186,118 @@ function initialize(){
  <div id="map_canvas" style="width:100%; height:100%"></div>
  <div id="dialog" title="결과검색창" style="padding: 0px 5px;">
  
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
+  <div class='content'>
+    <div>
+      <a class="aClass" href="#">
+      <img class='imgClass' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQXwFO6OCbbB4SVQaPmmVV4XPUiq9MWN95398xgOdNTCTrZHN702w">
+      </a>
+    </div>
+    <div class="textTitleDivClass">
+      <span class="textTitleClass">타워 브릿지</span>
+    </div>
+    <div style="border-top: 1px solid #f1f1f1;">
+      <img style="padding-left: 10px; padding-top: 10px" width="50px" height="50px" src="http://tv03.search.naver.net/nhnsvc?size=120x150&quality=9&q=http://sstatic.naver.net/people/152/201303181146065271.jpg">
+      <span style="vertical-align: middle; position: relative; top: -33px; font-size: 14px">고아라</span>
+      <span style="vertical-align: middle; position: relative; left: -49px; top: -13px; font-size: 14px">런던</span>
+    </div>
+  </div>
+ 
+  <div class='content'>
+    <div>
+      <a class="aClass" href="#">
+      <img class='imgClass' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
+      </a>
+    </div>
+    <div class="textTitleDivClass">
+      <span class="textTitleClass">타워 브릿지</span>
+    </div>
+    <div style="border-top: 1px solid #f1f1f1;">
+      <img style="padding-left: 10px; padding-top: 10px" width="50px" height="50px" src="http://tv03.search.naver.net/nhnsvc?size=120x150&quality=9&q=http://sstatic.naver.net/people/152/201303181146065271.jpg">
+      <span style="vertical-align: middle; position: relative; top: -33px; font-size: 14px">고아라</span>
+      <span style="vertical-align: middle; position: relative; left: -49px; top: -13px; font-size: 14px">런던</span>
+    </div>
+  </div>
+ 
+  <div class='content'>
+    <div>
+      <a class="aClass" href="#">
+      <img class='imgClass' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
+      </a>
+    </div>
+    <div class="textTitleDivClass">
+      <span class="textTitleClass">타워 브릿지</span>
+    </div>
+    <div style="border-top: 1px solid #f1f1f1;">
+      <img style="padding-left: 10px; padding-top: 10px" width="50px" height="50px" src="http://tv03.search.naver.net/nhnsvc?size=120x150&quality=9&q=http://sstatic.naver.net/people/152/201303181146065271.jpg">
+      <span style="vertical-align: middle; position: relative; top: -33px; font-size: 14px">고아라</span>
+      <span style="vertical-align: middle; position: relative; left: -49px; top: -13px; font-size: 14px">런던</span>
+    </div>
+  </div>
+ 
+  <div class='content'>
+    <div>
+      <a class="aClass" href="#">
+      <img class='imgClass' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
+      </a>
+    </div>
+    <div class="textTitleDivClass">
+      <span class="textTitleClass">타워 브릿지</span>
+    </div>
+    <div style="border-top: 1px solid #f1f1f1;">
+      <img style="padding-left: 10px; padding-top: 10px" width="50px" height="50px" src="http://tv03.search.naver.net/nhnsvc?size=120x150&quality=9&q=http://sstatic.naver.net/people/152/201303181146065271.jpg">
+      <span style="vertical-align: middle; position: relative; top: -33px; font-size: 14px">고아라</span>
+      <span style="vertical-align: middle; position: relative; left: -49px; top: -13px; font-size: 14px">런던</span>
+    </div>
+  </div>
+ 
+  <div class='content'>
+    <div>
+      <a class="aClass" href="#">
+      <img class='imgClass' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
+      </a>
+    </div>
+    <div class="textTitleDivClass">
+      <span class="textTitleClass">타워 브릿지</span>
+    </div>
+    <div style="border-top: 1px solid #f1f1f1;">
+      <img style="padding-left: 10px; padding-top: 10px" width="50px" height="50px" src="http://tv03.search.naver.net/nhnsvc?size=120x150&quality=9&q=http://sstatic.naver.net/people/152/201303181146065271.jpg">
+      <span style="vertical-align: middle; position: relative; top: -33px; font-size: 14px">고아라</span>
+      <span style="vertical-align: middle; position: relative; left: -49px; top: -13px; font-size: 14px">런던</span>
+    </div>
+  </div>
+ 
+  <div class='content'>
+    <div>
+      <a class="aClass" href="#">
+      <img class='imgClass' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
+      </a>
+    </div>
+    <div class="textTitleDivClass">
+      <span class="textTitleClass">타워 브릿지</span>
+    </div>
+    <div style="border-top: 1px solid #f1f1f1;">
+      <img style="padding-left: 10px; padding-top: 10px" width="50px" height="50px" src="http://tv03.search.naver.net/nhnsvc?size=120x150&quality=9&q=http://sstatic.naver.net/people/152/201303181146065271.jpg">
+      <span style="vertical-align: middle; position: relative; top: -33px; font-size: 14px">고아라</span>
+      <span style="vertical-align: middle; position: relative; left: -49px; top: -13px; font-size: 14px">런던</span>
+    </div>
+  </div>
+ 
+  <div class='content'>
+    <div>
+      <a class="aClass" href="#">
+      <img class='imgClass' src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQXwFO6OCbbB4SVQaPmmVV4XPUiq9MWN95398xgOdNTCTrZHN702w">
+      
+    </div>
+    <div class="textTitleDivClass">
+      <span class="textTitleClass">타워 브릿지</span>
+    </div>
+    <div style="border-top: 1px solid #f1f1f1;">
+      <img style="padding-left: 10px; padding-top: 10px" width="50px" height="50px" src="http://tv03.search.naver.net/nhnsvc?size=120x150&quality=9&q=http://sstatic.naver.net/people/152/201303181146065271.jpg">
+      <span style="vertical-align: middle; position: relative; top: -33px; font-size: 14px">고아라</span>
+      <span style="vertical-align: middle; position: relative; left: -49px; top: -13px; font-size: 14px">런던</span>
+    </div>
   </div>
 
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
   </div>
-
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
-  </div>
-
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
-  </div>
-
-
-  <div class='content' style="width: 300px">
-    <a href="#">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9bU_knwuevXWoMevmEkCypnQBicxOHZY5teJh6jqwPrMi2dQtJQ">
-    </a><br>
-    <span>타워 브릿지</span>
-  </div>
-
-  
-	
-
-	</div>
 </body>
 </html>
