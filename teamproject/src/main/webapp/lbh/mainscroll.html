@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<style type="text/css">
+
+body {
+      background: red;
+}
+
+#span0 {
+	text-decoration: underline;
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+#span1 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+#div1 {
+	float: left;
+	background: #efe5d0 bottom right;
+	border: #FCFCFC 1px solid;
+	padding: 0px;
+	width: 150px;
+	font-size: 80%;
+	line-height: 200%;
+	overflow: hidden;
+	-webkit-border-radius: 10px;
+}
+
+#div2 {
+	clear: left;
+	background: #DDDDDD;
+	border: gray 0px solid;
+	margin: 170px 10px;
+	padding: 12px 12px;
+	width: 290px;
+	height: 220px;
+	/* 단락의 줄 간격을 기본 값의 2배로 지정 */
+	line-height: 200%;
+	/*  단락의 자간 너비를 –1pt로 지정 */
+	letter-spacing: -1pt;
+	/*  단어의 띄어쓰기 너비를 5px로 지정 */
+	word-spacing: 5px;
+	/* 단락에 들여쓰기를 5% 적용 */
+	text-indent: 5%;
+	/*  단락의 가로줄에 좌측맞춤을 적용 */
+	text-align: left;
+	/*  영역을 넘어가는 텍스트는 잘라냄 */
+	overflow: hidden;
+}
+
+#div0 {
+	float: left;
+	background: #efe5d0 bottom right;
+	border: #FCFCFC 1px solid;
+	padding: 0px;
+	width: 150px;
+	font-size: 80%;
+	line-height: 200%;
+	overflow: hidden;
+	-webkit-border-radius: 10px;
+}
+</style>
+<script>
+	// 무한 스크롤 부분
+  $(document).ready(function() {
+      	  var $div0 = $('#div0');
+	  // 스크롤 이벤트 발생 시
+	  $(window).scroll(function() {
+		  // 필요한 변수를 구합니다.
+		  var scrollHeight = $(window).scrollTop() + $(window).height();
+		  var documentHeight = $(document).height();
+		  // 스크롤의 높이와 문서의 높이가 같을 때
+		  if (scrollHeight == documentHeight) {
+			  for (var i = 0; i < 10; i++) {
+			  	$('<h1>aaa</h1>').appendTo('body');
+			  }
+		  }
+	  });
+  });
+	
+  $(document).ready(function () {
+    for (var i = 0; i < 20; i++) {
+        $('<h1>Infinity Scroll</h1>').appendTo('body');
+    }
+});
+
+  // 테스트를 위해 내부에 공간을 채워둡니다.
+</script>
+<script>
+    $(function(){
+
+      var $div0 = $('#div0');
+    
+      $div0.isotope({
+        itemSelector : '.element'
+      });
+      
+      $div0.infinitescroll({
+        navSelector  : '#page_nav',    // selector for the paged navigation 
+        nextSelector : '#page_nav a',  // selector for the NEXT link (to page 2)
+        itemSelector : '.element',     // selector for all items you'll retrieve
+        loading: {
+            finishedMsg: 'No more pages to load.',
+            img: 'http://i.imgur.com/qkKy8.gif'
+          }
+        },
+        // call Isotope as a callback
+        function( newElements ) {
+          $div0.isotope( 'appended', $( newElements ) ); 
+        }
+      );
+      
+    
+    });
+  </script>
+
+
+</head>
+<body>
+<div class="div00">
+    <div id="div0">
+      <img src="http://media-cache-ak0.pinimg.com/736x/c3/f4/e0/c3f4e0834e89cc17f72f67895093aed8.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ec0.pinimg.com/736x/31/5b/5c/315b5cb903e3193192d6ffdd5ff349ed.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ec0.pinimg.com/236x/0b/17/9e/0b179e96c0d02b957563ec0282805b5f.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ec0.pinimg.com/736x/54/7a/67/547a67ffb20361776b52793ffefe6e79.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ak0.pinimg.com/236x/62/83/3c/62833c02886f147c17aae2a14c4791e3.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ec0.pinimg.com/236x/fb/72/f2/fb72f2e485d35b3599dcce7d07452732.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ak0.pinimg.com/236x/43/89/2b/43892bb05902c34c6fa6c753efef0d15.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ec0.pinimg.com/236x/a4/45/89/a44589f7f54406e3f44ee5937396ab80.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ak0.pinimg.com/736x/d0/04/ae/d004aed782441bdb410d0d5fa1db7a17.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+    
+    <div id="div0">
+      <img src="http://media-cache-ec0.pinimg.com/236x/fb/72/f2/fb72f2e485d35b3599dcce7d07452732.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+</div>  
+    
+    <div id="div1">
+      <img src="http://media-cache-ak0.pinimg.com/236x/e3/99/4e/e3994e135c39ff5ac1219c91329e73b5.jpg" width="100%" >
+      <span id="span1">오옷 스카이트리! 드디어 가보았다. 강추해요. 강추강추(^^)b</span>
+    </div>
+
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
