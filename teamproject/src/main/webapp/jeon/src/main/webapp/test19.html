@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+<link href="jquery.thumbnailScroller.css" rel="stylesheet" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="jquery-ui-1.8.13.custom.min.js"></script>
+<script>
+jQuery.noConflict(); 
+(function($){
+window.onload=function(){ 
+	var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState == 4) { 
+      if(xhr.status == 200) {
+        var jsonResult = JSON.parse(xhr.responseText).jsonResult;
+        if(jsonResult.resultStatus == 1) {
+          alert('시스템이 바쁩니다.\n 나중에 다시 시도해 주세요!');
+          console.log('서버 요청 오류!\n' + jsonResult.error); //프론트엔드 개발자가 에러를 확인할 수 있도록 보여줌
+        } else {
+          var photos = jsonResult.data;
+          
+          var divID = document.getElementById("jTscrollerID");
+          var dTag;
+          var imgTag;
+          
+          for(var i = 0; i < photos.length; ++i) {
+            aTag = document.createElement("a");
+            aTag.setAttribute("href", "#");
+            imgTag = document.createElement("img");
+            jQuery(imgTag).css("height","100px").css("width","80px");
+            imgTag.setAttribute("src","files/" + photos[i].path);
+            aTag.appendChild(imgTag);
+            divID.appendChild(aTag);
+           }
+          
+          $("#tS1").thumbnailScroller({ 
+            scrollerType:"hoverAccelerate", 
+            scrollerOrientation:"horizontal", 
+            scrollSpeed:2, 
+            scrollEasing:"easeOutCirc", 
+            scrollEasingAmount:600, 
+            acceleration:4, 
+            scrollSpeed:800, 
+            noScrollCenterSpace:10, 
+            autoScrolling:0, 
+            autoScrollingSpeed:2000, 
+            autoScrollingEasing:"easeInOutQuad", 
+            autoScrollingDelay:500 
+          });
+        }
+      }
+    }
+  };
+  xhr.open('GET','photo/ajax/list.do',true);   
+  xhr.send();
+}
+})(jQuery);
+// jQuery(document).ready(function () {
+// 	var xhr = new XMLHttpRequest();
+// 	xhr.onreadystatechange = function() {
+//     if(xhr.readyState == 4) { 
+//       if(xhr.status == 200) {
+//         var jsonResult = JSON.parse(xhr.responseText).jsonResult;
+//         if(jsonResult.resultStatus == 1) {
+//           alert('시스템이 바쁩니다.\n 나중에 다시 시도해 주세요!');
+//           console.log('서버 요청 오류!\n' + jsonResult.error); //프론트엔드 개발자가 에러를 확인할 수 있도록 보여줌
+//         } else {
+//           var photos = jsonResult.data;
+          
+//           var divID = document.getElementById("jTscrollerID");
+//           var dTag;
+//           var imgTag;
+          
+//           console.log(photos);
+          
+//           for(var i = 0; i < photos.length; ++i) {
+//             aTag = document.createElement("a");
+//             aTag.setAttribute("href", "#");
+//             imgTag = document.createElement("img");
+//             imgTag.setAttribute("src","files/" + photos[i].path);
+//             aTag.appendChild(imgTag);
+//             divID.appendChild(aTag);
+//            }
+          
+//           $("#tS1").thumbnailScroller({ 
+//             scrollerType:"hoverAccelerate", 
+//             scrollerOrientation:"horizontal", 
+//             scrollSpeed:2, 
+//             scrollEasing:"easeOutCirc", 
+//             scrollEasingAmount:600, 
+//             acceleration:4, 
+//             scrollSpeed:800, 
+//             noScrollCenterSpace:10, 
+//             autoScrolling:0, 
+//             autoScrollingSpeed:2000, 
+//             autoScrollingEasing:"easeInOutQuad", 
+//             autoScrollingDelay:500 
+//           });
+//         }
+//       }
+//     }
+//   };
+//   xhr.open('GET','photo/ajax/list.do',true);   
+//   xhr.send();
+// });
+</script>
+<script src="jquery.thumbnailScroller.js"></script>
+</head>
+<body>
+
+<div id="tS1" class="jThumbnailScroller" style="margin-top:160px; width:95%;">
+  <div class="jTscrollerContainer">
+    <div id="jTscrollerID" class="jTscroller">
+    </div>
+  </div>
+  <a href="#" class="jTscrollerPrevButton"></a>
+  <a href="#" class="jTscrollerNextButton"></a>
+</div>    
+
+</body>
+</html>

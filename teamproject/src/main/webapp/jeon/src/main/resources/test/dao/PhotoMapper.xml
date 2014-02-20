@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.PhotoDao">
+    <resultMap type="photo" id="photoResultMap">
+    <id property="no"           column="PHNO"/>
+    <result property="path"     column="PATH"/>
+  </resultMap>  
+    
+    
+  <select id="selectListByLocation" parameterType="int" resultMap="photoResultMap">
+		select t2.PATH
+		from LOCATIONS t1 left outer join PHOTOS t2 using(LNO)
+		where T1.LNO = #{value}
+    order by t2.PHNO;
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
