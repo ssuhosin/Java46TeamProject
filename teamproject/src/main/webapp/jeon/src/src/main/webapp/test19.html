@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="initial-scale=1.0; user-scalable=no"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8 " />
+<title>Insert title here</title>
+<style>
+  .ui-state-focus {
+    outline:none;
+  }
+</style>
+<link href="jquery.thumbnailScroller.css" rel="stylesheet" />
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWJdvu0r-PykFWvN6sv63RDrRmkGNxsRU&sensor=false"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="jquery-ui-1.8.13.custom.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script>
+  var map;
+  function initialize() {
+    var mapOptions = {
+      zoom : 16,
+      center : new google.maps.LatLng(37.553152,126.972619)
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var flightPlanCoordinates = [
+        new google.maps.LatLng(37.553152,126.972619),
+        new google.maps.LatLng(37.553764,126.973754),
+        new google.maps.LatLng(37.553322,126.976522),
+        new google.maps.LatLng(37.552471,126.976801),
+        new google.maps.LatLng(37.553203,126.97869),
+        new google.maps.LatLng(37.553696,126.980943)
+        ];
+    var flightPath = new google.maps.Polyline({
+      path : flightPlanCoordinates,
+      geodesic : true,
+      strokeColor : '#FF0000',
+      strokeOpacity : 1.0,
+      strokeWeight : 2
+    });
+
+    flightPath.setMap(map);
+    
+    new google.maps.Marker({
+      position: new google.maps.LatLng(37.553152,126.972619),
+      map: map,
+      title: '서울역'
+    });
+    
+    new google.maps.Marker({
+      position: new google.maps.LatLng(37.553696,126.980943),
+      map: map,
+      title: '남산'
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<script>
+jQuery.noConflict(); 
+(function($){
+window.onload=function(){ 
+	var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState == 4) { 
+      if(xhr.status == 200) {
+        var jsonResult = JSON.parse(xhr.responseText).jsonResult;
+        if(jsonResult.resultStatus == 1) {
+          alert('시스템이 바쁩니다.\n 나중에 다시 시도해 주세요!');
+          console.log('서버 요청 오류!\n' + jsonResult.error); //프론트엔드 개발자가 에러를 확인할 수 있도록 보여줌
+        } else {
+          var photos = jsonResult.data;
+          
+          var divID = document.getElementById("jTscrollerID");
+          var dTag;
+          var imgTag;
+          
+          jQuery("#accordion").accordion({
+            active: false,
+            collapsible: true,
+          });
+          
+          for(var i = 0; i < photos.length; ++i) {
+            aTag = document.createElement("a");
+            aTag.setAttribute("href", "#");
+            imgTag = document.createElement("img");
+            jQuery(imgTag).css("height","100px").css("width","80px");
+            imgTag.setAttribute("src","files/" + photos[i].path);
+            aTag.appendChild(imgTag);
+            divID.appendChild(aTag);
+           }
+          
+          $("#tS1").thumbnailScroller({ 
+            scrollerType:"hoverAccelerate", 
+            scrollerOrientation:"horizontal", 
+            scrollSpeed:2, 
+            scrollEasing:"easeOutCirc", 
+            scrollEasingAmount:600, 
+            acceleration:4, 
+            scrollSpeed:800, 
+            noScrollCenterSpace:10, 
+            autoScrolling:0, 
+            autoScrollingSpeed:2000, 
+            autoScrollingEasing:"easeInOutQuad", 
+            autoScrollingDelay:500 
+          });
+        }
+      }
+    }
+  };
+  xhr.open('GET','photo/ajax/list.do',true);   
+  xhr.send();
+}
+})(jQuery);
+</script>
+<script src="jquery.thumbnailScroller.js"></script>
+</head>
+<body>
+
+<div id="map-canvas" style="height: 300px; margin: 0px; padding: 0px;"></div>
+
+<div id="accordion" style="margin-top: 10px;">
+	<h3 style="margin-bottom: 5px">서울역</h3>
+	<div>
+		<p style="margin-top: 0px;">서울역은 대한민국 서울특별시 용산구 동자동에 있는 한국철도공사와 코레일공항철도의 역으로, 경부선, 경의선,
+			인천국제공항철도의 기점이다. 인근 서울 지하철 1호선과 4호선의 지하 서울역과 연결되어 있다.</p>
+	</div>
+</div>
+<div id="tS1" class="jThumbnailScroller" style="width:95%;">
+ <div class="jTscrollerContainer">
+   <div id="jTscrollerID" class="jTscroller">
+   </div>
+ </div>
+ <a href="#" class="jTscrollerPrevButton"></a>
+ <a href="#" class="jTscrollerNextButton"></a>
+</div>    
+
+</body>
+</html>
