@@ -105,7 +105,7 @@ ALTER TABLE CONTENTS
 CREATE TABLE LOCATIONS (
   LNO         INTEGER      NOT NULL COMMENT '장소번호', -- 장소번호
   TITLE       VARCHAR(255) NULL     COMMENT '장소명', -- 장소명
-  DISCRIPTION TEXT         NULL     COMMENT '내용' -- 내용
+  DESCRIPTION TEXT         NULL     COMMENT '내용' -- 내용
 )
 COMMENT '장소정보';
 
